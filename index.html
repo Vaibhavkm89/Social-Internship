@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FairAI - Fairness Testing in AI Models</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <h1 class="logo">FairAI</h1>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">☰</button>
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#demo">Demo</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h2>Fairness Testing in AI Models</h2>
+            <p>A simple tool designed to test and check whether Artificial Intelligence models treat different groups of people fairly and without bias.</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About AI Fairness</h2>
+            <div class="about-box">
+                <p><strong>What is AI Fairness?</strong></p>
+                <p>AI fairness means ensuring that artificial intelligence systems make unbiased decisions. When machine learning models are trained on historical data, they can accidentally learn human biases related to gender, race, age, or income.</p>
+                <br>
+                <p><strong>Why is Fairness Important?</strong></p>
+                <p>AI algorithms are currently used in important areas like hiring, loan approvals, healthcare, and admissions. If an AI model is biased, it might unfairly deny opportunities to certain groups of people. Testing for fairness helps developers build ethical and trustworthy AI systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="card">
+                    <h3>Bias Detection</h3>
+                    <p>Detects hidden unfairness and disparities in AI datasets and predictions across demographic groups.</p>
+                </div>
+                <div class="card">
+                    <h3>Fairness Metrics</h3>
+                    <p>Calculates basic metrics such as demographic parity and equal opportunity scores automatically.</p>
+                </div>
+                <div class="card">
+                    <h3>Easy Reports</h3>
+                    <p>Generates simple summary reports showing model performance and fairness status clearly.</p>
+                </div>
+                <div class="card">
+                    <h3>Simple Interface</h3>
+                    <p>Clean and beginner-friendly user interface built for easy navigation and quick testing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Upload Data</h3>
+                    <p>Upload your AI model dataset or prediction files in standard format.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Run Test</h3>
+                    <p>Click the test button to calculate fairness scores across sensitive attributes.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>View Results</h3>
+                    <p>Check the fairness metrics and see if your model passes the bias threshold.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2>Try the Interactive Demo</h2>
+            <p>Select a sample AI model from the dropdown list below and click "Run Test" to view sample fairness results.</p>
+            
+            <div class="demo-box">
+                <div class="form-group">
+                    <label for="modelSelect">Select AI Model:</label>
+                    <select id="modelSelect">
+                        <option value="loan">Loan Approval Model</option>
+                        <option value="hiring">Hiring Resume Screener</option>
+                        <option value="admission">College Admission Predictor</option>
+                    </select>
+                </div>
+
+                <button id="runDemoBtn" class="btn">Run Test</button>
+
+                <div id="demoResult" class="demo-result" style="display: none;">
+                    <h3>Sample Test Result</h3>
+                    <hr>
+                    <p><strong>Selected Model:</strong> <span id="resultModelName">-</span></p>
+                    <p><strong>Bias Score:</strong> <span id="resultBiasScore" class="badge">Low</span></p>
+                    <p><strong>Fairness Rating:</strong> <span id="resultFairness" class="badge">Good</span></p>
+                    <p><strong>Status:</strong> <span id="resultStatus">Model satisfies basic demographic parity standards.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions or suggestions about our AI fairness tool? Send us a message.</p>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" rows="4" placeholder="Enter your message..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            <div id="contactSuccessMessage" class="success-message" style="display: none;">
+                Thank you! Your message has been sent successfully.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FairAI Project. All Rights Reserved.</p>
+            <p class="student-note">Note: This is a B.Tech 1st Year Academic Student Project on AI Fairness Testing.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
