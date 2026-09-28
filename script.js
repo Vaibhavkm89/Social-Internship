@@ -1,7 +1,5 @@
-// Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Mobile Menu Toggle
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
 
@@ -11,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Demo Section Interactive Logic
     const runDemoBtn = document.getElementById('runDemoBtn');
     const modelSelect = document.getElementById('modelSelect');
     const demoResult = document.getElementById('demoResult');
@@ -45,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Contact Form Handler
     const contactForm = document.getElementById('contactForm');
     const contactSuccessMessage = document.getElementById('contactSuccessMessage');
 
