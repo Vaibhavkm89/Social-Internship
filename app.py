@@ -52,12 +52,12 @@ preprocessor = ColumnTransformer(
 model = Pipeline(
     steps=[
         ("preprocessor", preprocessor),
-        ("classifier", LogisticRegression())
+        ("classifier", LogisticRegression(max_iter=1000))
     ]
 )
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
+    X, y, test_size=0.3, random_state=42, stratify=df["gender"]
 )
 
 model.fit(X_train, y_train)
@@ -69,15 +69,8 @@ def calculate_fairness(predictions, test_data):
     male_predictions = results[results["gender"] == "Male"]["prediction"]
     female_predictions = results[results["gender"] == "Female"]["prediction"]
 
-    if len(male_predictions) > 0:
-        male_rate = male_predictions.mean()
-    else:
-        male_rate = 0
-
-    if len(female_predictions) > 0:
-        female_rate = female_predictions.mean()
-    else:
-        female_rate = 0
+    male_rate = male_predictions.mean() if len(male_predictions) > 0 else 0
+    female_rate = female_predictions.mean() if len(female_predictions) > 0 else 0
 
     if male_rate > 0:
         disparate_impact = female_rate / male_rate
