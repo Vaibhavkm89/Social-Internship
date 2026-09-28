@@ -17,44 +17,50 @@ FairAI provides a simple user interface to help users understand how bias is det
 
 ## Technology Stack
 
-- HTML5: Semantic markup and structure
-- CSS3: Flexbox layout, styling, and basic responsive design
-- JavaScript (ES6): Interactive menu toggle, demo test simulation, and contact form handling
+- Python (Flask): Machine learning backend server (`app.py`), Scikit-Learn LogisticRegression pipeline, dataset preprocessing (`ColumnTransformer`, `OneHotEncoder`), and fairness metrics endpoint.
+- HTML5: Semantic markup and structure.
+- CSS3: Flexbox layout, styling, and responsive design.
+- JavaScript (ES6): Fetch API connection to ML server, interactive menu toggle, and contact form handling.
 
 ## Project Structure
 
 ```
 Social Intership/
 │
+├── app.py          # Python Flask server containing ML model & fairness evaluation API
 ├── index.html      # Main HTML document containing all website sections
 ├── style.css       # Custom stylesheet for layout, colors, and responsiveness
-├── script.js       # Client-side JavaScript for interactive elements
+├── script.js       # Client-side JavaScript connecting web UI to Flask ML API
 └── README.md       # Project documentation
 ```
 
-## Website Sections
-
-1. Header: Navigation links and project title logo.
-2. Hero Section: Brief summary and call to action.
-3. About Section: Detailed explanation of AI fairness and its importance.
-4. Features Section: Overview of core capabilities in card layout.
-5. How It Works: 3-step process (Upload Data, Run Test, View Results).
-6. Demo Section: Dropdown model simulator displaying fairness test results.
-7. Contact Section: Simple contact form for feedback.
-8. Footer: Copyright information and academic project notice.
-
 ## How to Run Locally
 
-1. Clone or download the repository to your local machine.
-2. Open `index.html` directly in any web browser.
+### 1. Start the Python Flask Machine Learning Server
 
-Alternatively, you can serve the files using Python built-in HTTP server:
+Make sure you have Flask, Flask-CORS, Pandas, and Scikit-Learn installed:
+
+```bash
+pip install flask flask-cors pandas scikit-learn
+```
+
+Run `app.py`:
+
+```bash
+python app.py
+```
+
+The ML server will start running on `http://127.0.0.1:5000`.
+
+### 2. Launch the Web Interface
+
+Open `index.html` directly in any web browser, or serve it using Python:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then navigate to `http://localhost:8000` in your web browser.
+Then navigate to `http://localhost:8000` in your web browser. Click **Run Bias Test** to send requests to the live ML model!
 
 ## Academic Note
 
