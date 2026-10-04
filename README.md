@@ -61,7 +61,3 @@ python -m http.server 8000
 ```
 
 Then navigate to `http://localhost:8000` in your web browser. Click **Run Bias Test** to send requests to the live ML model!
-
-## Academic Note
-
-This project is created for educational and demonstration purposes as a B.Tech 1st Year student submission.
