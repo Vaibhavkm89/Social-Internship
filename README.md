@@ -1,6 +1,6 @@
 # FairAI - Fairness Testing in AI Models
 
-FairAI is a simple, responsive web application built to demonstrate basic fairness testing concepts in Artificial Intelligence models. This project was developed as a first-year B.Tech academic student project using fundamental web technologies.
+FairAI is a simple, responsive web application built to demonstrate basic fairness testing concepts in Artificial Intelligence models.
 
 ## About the Project
 
